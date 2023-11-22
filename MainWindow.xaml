@@ -42,6 +42,18 @@
             <Button Content="Anwendung 3" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
             <Button Content="Anwendung 4" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
             <Button Content="Anwendung 4" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
+
+
+            <Button Content="Anwendung mit Bild" Style="{StaticResource DashboardButton}" Click="Button_Click">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="pack://application:,,,/Resources/Comos_.png" Width="50" Height="50"/>
+                            <TextBlock Text="{Binding Content, RelativeSource={RelativeSource AncestorType=Button}}" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
             <!-- Weitere Buttons hier ... -->
         </UniformGrid>
     </Grid>

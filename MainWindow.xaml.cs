@@ -27,7 +27,18 @@ namespace Test_EVN
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            StartProcess("C:\\Users\\Public\\Desktop\\COMOS 10.4.4.lnk");
+        }
+        private void StartProcess(string path)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Starten der Anwendung: {ex.Message}");
+            }
         }
     }
 }
