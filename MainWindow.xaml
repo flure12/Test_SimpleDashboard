@@ -1,0 +1,50 @@
+﻿<Window x:Class="Test_EVN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_EVN"
+        mc:Ignorable="d"
+        Title="EVN-Dashboard" Height="450" Width="800">
+    <Window.Resources>
+        <!-- Style für die Buttons -->
+        <Style x:Key="DashboardButton" TargetType="Button">
+            <Setter Property="Background" Value="#2196F3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1565C0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#4CAF50">
+            <TextBlock Text="Mein Dashboard" Foreground="White" FontSize="18" FontWeight="Bold"/>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <UniformGrid x:Name ="DashboardButton"  Grid.Row="1" Rows="3" Columns="4" Margin="10">
+            <Button Content="Anwendung 1" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
+            <Button Content="Anwendung 2" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
+            <Button Content="Anwendung 3" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
+            <Button Content="Anwendung 4" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
+            <Button Content="Anwendung 4" Style="{StaticResource DashboardButton}" Click="Button_Click"/>
+            <!-- Weitere Buttons hier ... -->
+        </UniformGrid>
+    </Grid>
+
+    
+</Window>
